@@ -10,8 +10,11 @@ first = "main_code.scripts.test_work:main"
 
 [tool.poetry.dependencies]
 python = "^3.8"
+hexlet-immutable-fs-trees = "^0.1.7"
 
 [tool.poetry.dev-dependencies]
+flake8 = "^4.0.1"
+pytest = "^6.2.5"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
