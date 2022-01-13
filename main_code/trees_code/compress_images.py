@@ -9,10 +9,15 @@ tree = mkdir(
         mkfile('avatar.jpg', {'size': 100}),
         mkfile('photo.jpg', {'size': 150}),
         mkdir('new_dir'),
-        mkfile('new_photo', {'size': 500})
+        mkfile('new_file', {'size': 500})
     
     ],
     {'hide': False})
+
+
+def find_jpg(name_file):
+    file_extension = name_file[::-1][:3][::-1]
+    return True if file_extension == 'jpg' else False
 
 
 def compress_images(directory):
@@ -27,7 +32,8 @@ def compress_images(directory):
         if is_file(child) == True:
             name_file = get_name(child)
             meta = copy.deepcopy(get_meta(child))
-            meta['size'] = meta['size'] // 2
+            if find_jpg(name_file) is True:
+                meta['size'] = meta['size'] // 2
             new_children.append(mkfile(name_file, meta))
         else:
             name_dir = get_name(child)
@@ -36,9 +42,3 @@ def compress_images(directory):
 
     directory_new = mkdir(name_new, new_children, meta_new)
     return directory_new
-
-
-    return children_is_file
-
-print(compress_images(tree))
-
