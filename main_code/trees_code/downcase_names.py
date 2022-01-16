@@ -13,7 +13,7 @@ def downcase_file_names(node):
         meta = copy.deepcopy(fs.get_meta(node))
         children = fs.get_children(node)
         new_children = list(map(downcase_file_names, children))
-        return fs.mkdir(name, children, meta)
+        return fs.mkdir(name, new_children, meta)
     else:
         name = fs.get_name(node).lower()
         meta = copy.deepcopy(fs.get_meta(node))
