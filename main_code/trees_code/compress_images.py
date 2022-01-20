@@ -6,10 +6,10 @@ from hexlet.fs import get_children, get_meta, get_name, is_file, mkdir, mkfile
 tree = mkdir(
     'my_doc',
     [
-        mkfile('avatar.jpg', {'size': 100}),
-        mkfile('photo.jpg', {'size': 150}),
+        mkfile('Avatar.jpg', {'size': 100}),
+        mkfile('Photo.jpg', {'size': 150}),
         mkdir('new_dir'),
-        mkfile('new_file', {'size': 500})
+        mkfile('NEW_file', {'size': 500})
     
     ],
     {'hide': False})
